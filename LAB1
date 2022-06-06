@@ -1,15 +1,16 @@
-package pl.lublin.wsei.java.cwiczenia;
+package pl.lublin.wsei.java.cwiczenia.mylib;
 
-import pl.lublin.wsei.java.cwiczenia.mylib.Account;
 
-public class Main {
+public class Account {
 
-        public static void main(String[] args){
+    private String name;
 
-            Account acc = new Account();
-            acc.setName("Dawid Pawlowski");
-            System.out.println(acc.getName());
-
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
 
 }
+
