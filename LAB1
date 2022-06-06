@@ -19,7 +19,18 @@ public class Account {
                 l1=l1.toUpperCase();
                 l2 = l1.charAt(0);
                 l[i+1]=l2;
+            }else if(i!=name.length()-1){
+                l1=l[i+1]+"!";
+                l1=l1.toLowerCase();
+                l2 = l1.charAt(0);
+                l[i+1]=l2;
+            }else {
+                l1=l[i]+"!";
+                l1=l1.toLowerCase();
+                l2 = l1.charAt(0);
+                l[i]=l2;
             }
+
 
         }
 
