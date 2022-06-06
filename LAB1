@@ -1,44 +1,15 @@
-package pl.lublin.wsei.java.cwiczenia.mylib;
+package pl.lublin.wsei.java.cwiczenia;
 
+import pl.lublin.wsei.java.cwiczenia.mylib.Account;
 
-public class Account {
+public class Main {
 
-    public String name;
+        public static void main(String[] args){
 
-    public void setName(String name) {
-        char l[]=name.toCharArray();
-        String l1=l[0]+"!";
-        l1=l1.toUpperCase();
-        char l2 = l1.charAt(0);
-        l[0]=l2;
-        for(int i=0; i<name.length(); i++) {
-
-            String spacja=" ";
-            if(l[i]==spacja.charAt(0)){
-                l1=l[i+1]+"!";
-                l1=l1.toUpperCase();
-                l2 = l1.charAt(0);
-                l[i+1]=l2;
-            }else if(i!=name.length()-1){
-                l1=l[i+1]+"!";
-                l1=l1.toLowerCase();
-                l2 = l1.charAt(0);
-                l[i+1]=l2;
-            }else {
-                l1=l[i]+"!";
-                l1=l1.toLowerCase();
-                l2 = l1.charAt(0);
-                l[i]=l2;
-            }
-
+            Account acc = new Account();
+            acc.setName("daWid pAwlOWskI");
+            System.out.println(acc.getName());
 
         }
-
-        name=String.valueOf(l);
-        this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
 
 }
