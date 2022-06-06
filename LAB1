@@ -3,8 +3,12 @@ package pl.lublin.wsei.java.cwiczenia;
 public class Main {
 
     public static void main(String[] args) {
-	System.out.print("Ala \n");
-        System.out.print("ma \n");
-        System.out.print("kota.\n");
+	
+	int a=3;
+	double b=4.21;
+	String s="cos";
+	
+	System.out.prints("a = %d, b = %f, s = %n",a ,b ,s);
+	
     }
 }
