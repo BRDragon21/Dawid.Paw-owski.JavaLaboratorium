@@ -8,7 +8,7 @@ public class Main {
 	double b=4.21;
 	String s="cos";
 	
-	System.out.prints("a = %d, b = %f, s = %n",a ,b ,s);
+	System.out.prints("a = %d, b = %.2f, s = %n",a ,b ,s);
 	
     }
 }
