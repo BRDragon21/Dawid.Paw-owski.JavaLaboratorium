@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab2.HelloController">
+   <children>
+      <Text layoutX="35.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybież rodzaj blachy" />
+      <CheckBox fx:id="chbStal" layoutX="161.0" layoutY="30.0" mnemonicParsing="false" onAction="#onChbS" text="stal" />
+      <CheckBox fx:id="chbStalN" layoutX="227.0" layoutY="30.0" mnemonicParsing="false" onAction="#onChbSN" text="stal nierdzewna" />
+      <TextField fx:id="textGB" layoutX="249.0" layoutY="72.0" />
+      <Text layoutX="35.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj promień walca (w metrach)" />
+      <Text layoutX="36.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pdaj wysokość walca (w metrach)" />
+      <TextField fx:id="textPW" layoutX="249.0" layoutY="122.0" />
+      <Text layoutX="34.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj grubość blachy (w milimetrach)" />
+      <TextField fx:id="textWW" layoutX="249.0" layoutY="172.0" />
+      <Button fx:id="btnWylicz" layoutX="202.0" layoutY="228.0" mnemonicParsing="false" onAction="#onWylcz" text="Wylicz" />
+      <Text layoutX="41.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waga walca" />
+      <Text layoutX="219.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cena walca" />
+      <Text fx:id="textWorning" fill="RED" layoutX="176.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybież rodzaj stali!" textAlignment="CENTER" visible="false" />
+      <Text fx:id="textWagW" layoutX="112.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="textCenW" layoutX="289.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
