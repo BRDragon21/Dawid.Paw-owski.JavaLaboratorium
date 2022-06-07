@@ -3,13 +3,29 @@ package pl.lublin.wsei.java.cwiczenia.mylib;
 
 public class Account {
 
-    private String name;
+    public String name;
 
     public void setName(String name) {
+        char l[]=name.toCharArray();
+        String l1=l[0]+"!";
+        l1=l1.toUpperCase();
+        char l2 = l1.charAt(0);
+        l[0]=l2;
+        for(int i=0; i<name.length(); i++) {
+
+            String spacja=" ";
+            if(l[i]==spacja.charAt(0)){
+                l1=l[i+1]+"!";
+                l1=l1.toUpperCase();
+                l2 = l1.charAt(0);
+                l[i+1]=l2;
+            }
+
+        }
+
+        name=String.valueOf(l);
         this.name = name;
     }
     public String getName() {
         return name;
     }
-
-}
