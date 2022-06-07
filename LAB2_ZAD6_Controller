@@ -1,0 +1,75 @@
+package com.example.lab2;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import java.text.DecimalFormat;
+
+public class HelloController {
+
+    public CheckBox chbStal;
+    public CheckBox chbStalN;
+    public TextField textGB;
+    public TextField textPW;
+    public TextField textWW;
+    public Button btnWylicz;
+    public Text textWagW;
+    public Text textCenW;
+    public Text textWorning;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
+    public void onWylcz(ActionEvent actionEvent) {
+        if(chbStalN.isSelected()==false && chbStal.isSelected()==false){
+            textWorning.setVisible(true);
+        }
+        //2pirh
+        String rt=textPW.getText();
+        String ht=textWW.getText();
+        double r=Double.parseDouble(rt);
+        double h=Double.parseDouble(ht);
+        double pb=0;
+        pb=2*Math.PI*r*h;
+        String gt=textGB.getText();
+        double g=Double.parseDouble(gt);
+        if(chbStal.isSelected()==true) {
+
+            double o, w;
+            o=pb*(g/1000);
+            w=o*7700;
+
+            textWagW.setText(df.format(w)+"kg");
+            textCenW.setText(df.format(w*7)+"zł");
+
+        }
+        if(chbStalN.isSelected()==true) {
+
+            double o, w;
+            o=pb*(g/1000);
+            w=o*7900;
+
+            textWagW.setText(df.format(w)+"kg");
+            textCenW.setText(df.format(w*14)+"zł");
+
+        }
+    }
+
+    public void onChbS(ActionEvent actionEvent) {
+        if(chbStalN.isSelected()==true){
+            chbStalN.setSelected(false);
+        }
+        textWorning.setVisible(false);
+    }
+
+    public void onChbSN(ActionEvent actionEvent) {
+        if(chbStal.isSelected()==true){
+            chbStal.setSelected(false);
+        }
+        textWorning.setVisible(false);
+    }
+
+}
