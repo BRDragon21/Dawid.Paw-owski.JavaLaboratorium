@@ -7,7 +7,7 @@ public class Main {
         public static void main(String[] args){
 
             Account acc = new Account();
-            acc.setName("dawid pawlowski");
+            acc.setName("daWid pAwlOWskI");
             System.out.println(acc.getName());
 
         }
