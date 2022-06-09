@@ -12,10 +12,10 @@ public class Infografika {
 
         String tytul;
         String adresStrony;
+        String adresGrafiki;
+        String adresMiniaturki;
+        Integer wysokosc;
         Integer szerokosc;
-        
-
-        String contents=new String(Files.readAllBytes(Paths.get("gusInfoGraphic.xml")));
 
         Pattern pat=Pattern.compile("<title><!\\[CDATA\\[(.*)\\]\\]><\\/title>");
         Matcher m=pat.matcher(tekst);
@@ -31,12 +31,33 @@ public class Infografika {
         else
             adresStrony="";
 
+        pat=Pattern.compile("content url=\"(.*)\" type");
+        m=pat.matcher(tekst);
+        if (m.find())
+            adresGrafiki=m.group(1);
+        else
+            adresGrafiki="";
+
+        pat=Pattern.compile("thumbnail url=\"(.*)\" type");
+        m=pat.matcher(tekst);
+        if (m.find())
+            adresMiniaturki=m.group(1);
+        else
+            adresMiniaturki="";
+
         pat=Pattern.compile("width=\"(.*)\" height");
         m=pat.matcher(tekst);
         if (m.find())
             szerokosc=Integer.parseInt(m.group(1));
         else
             szerokosc=0;
+
+        pat=Pattern.compile("height=\"(.*)\">");
+        m=pat.matcher(tekst);
+        if (m.find())
+            wysokosc=Integer.parseInt(m.group(1));
+        else
+            wysokosc=0;
 
     }
 
