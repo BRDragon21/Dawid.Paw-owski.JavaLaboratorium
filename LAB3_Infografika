@@ -8,14 +8,15 @@ import java.util.regex.Pattern;
 
 public class Infografika {
 
+    public String tytul;
+    public String adresStrony;
+    public String adresGrafiki;
+    public String adresMiniaturki;
+    public Integer wysokosc;
+    public Integer szerokosc;
+
     public Infografika(String tekst) throws IOException {
 
-        String tytul;
-        String adresStrony;
-        String adresGrafiki;
-        String adresMiniaturki;
-        Integer wysokosc;
-        Integer szerokosc;
 
         Pattern pat=Pattern.compile("<title><!\\[CDATA\\[(.*)\\]\\]><\\/title>");
         Matcher m=pat.matcher(tekst);
@@ -38,7 +39,7 @@ public class Infografika {
         else
             adresGrafiki="";
 
-        pat=Pattern.compile("thumbnail url=\"(.*)\" type");
+        pat=Pattern.compile("thumbnail url=\"(.*)\" />");
         m=pat.matcher(tekst);
         if (m.find())
             adresMiniaturki=m.group(1);
