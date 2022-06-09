@@ -1,0 +1,43 @@
+package pl.lublin.wsei.java.cwiczenia;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Infografika {
+
+    public Infografika(String tekst) throws IOException {
+
+        String tytul;
+        String adresStrony;
+        Integer szerokosc;
+        
+
+        String contents=new String(Files.readAllBytes(Paths.get("gusInfoGraphic.xml")));
+
+        Pattern pat=Pattern.compile("<title><!\\[CDATA\\[(.*)\\]\\]><\\/title>");
+        Matcher m=pat.matcher(tekst);
+        if (m.find())
+            tytul=m.group(1);
+        else
+            tytul="";
+
+        pat=Pattern.compile("<link>(.*)</link>");
+        m=pat.matcher(tekst);
+        if (m.find())
+            adresStrony=m.group(1);
+        else
+            adresStrony="";
+
+        pat=Pattern.compile("width=\"(.*)\" height");
+        m=pat.matcher(tekst);
+        if (m.find())
+            szerokosc=Integer.parseInt(m.group(1));
+        else
+            szerokosc=0;
+
+    }
+
+}
