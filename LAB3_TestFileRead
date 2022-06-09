@@ -8,15 +8,15 @@ public class TestFileRead {
 
     public static void main(String[] args) throws java.io.IOException {
 
-//        try{
+        try{
             String contents = new String(Files.readAllBytes(Paths.get("gusInfoGraphic.xml")));
             System.out.println("ZAWARTOSC PLIKU gusInfoGraphic.xml");
             System.out.print(contents);
-//        }
-//        catch (IOException e) {
-//            System.out.println("Błąd wczytywania pliku gusInfoGraphic.xml => "+ e.getLocalizedMessage());
-//            e.printStackTrace();
-//        }
+        }
+        catch (IOException e) {
+            System.out.println("Błąd wczytywania pliku gusInfoGraphic.xml => "+ e.getLocalizedMessage());
+            e.printStackTrace();
+        }
 
     }
 }
